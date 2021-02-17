@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded" , () =>  {
+document.addEventListener('DOMContentLoaded', () => {
   const bird = document.querySelector('.bird')
   const gameDisplay = document.querySelector('.game-container')
   const ground = document.querySelector('.ground')
@@ -6,27 +6,27 @@ document.addEventListener("DOMContentLoaded" , () =>  {
   let birdLeft = 220
   let birdBottom = 100
   let gravity = 2
-
+        
   function startGame() {
     birdBottom -= gravity
-    bird.getElementsByClassName.bottom = birdBottom +'px'
-    bird.getElementsByClassName.left = birdLeft + 'px'
+    bird.style.bottom = birdBottom +'px'
+    bird.style.left = birdLeft + 'px' 
   }
 
-  let timerId = setInterval(startGame(), 20)
-
-  clearInterval(timerId)
-
-  function control(e) {
-    if (e.keyCode == 32) {
-      jump()
-    }
-  }
+  let timerId = setInterval(startGame, 20)
 
   function jump() {
     if (birdBottom < 500) birdBottom += 50
     bird.style.bottom = birdBottom + 'px'
     console.log(birdBottom)
   }
-  document.addEventListener('keyup', control)
+  document.addEventListener('click', jump)
+
+  function generatePipes() {
+    const pipe = document.createElement('div')
+    pipe.classList.add('pipe')
+    gameDisplay.appendChild(pipe)
+  }
+
+  generatePipe()
 })
