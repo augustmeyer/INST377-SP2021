@@ -7,7 +7,7 @@ function moveNext() {
     const target = document.querySelector('.next');
     target.append(listContainer);
     
-    const array2 = array1.map(element => {
+    const array2 = array1.map(images => {
       const listItem = document.createElement('li');
       listContainer.append(listItem);
       return typeof element;
