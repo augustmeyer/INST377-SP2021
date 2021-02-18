@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       if (
         pipeLeft > 200 && pipeLeft < 280 && birdLeft === 220 &&
-        birdBottom < pipeBottom + 152
+        birdBottom < pipeBottom + 151
         || birdBottom === 0) {
         // eslint-disable-next-line no-use-before-define
         gameOver()
