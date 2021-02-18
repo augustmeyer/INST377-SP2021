@@ -19,14 +19,14 @@
     top: 580px;
 }
 .bird {
-    background-color: yellow;
+    background-image: url('flappy-bird2.png');
     position: absolute;
     width: 60;
     height: 45px;
 }
 
 .pipe {
-    background-color: green;
+    background-image: url('flappybird-pipe.png');
     width: 60px;
     height: 300px;
     position: absolute;
