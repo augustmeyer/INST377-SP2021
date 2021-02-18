@@ -42,9 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
         gameDisplay.removeChild(pipe)
       }
       if (
-        (pipeLeft > 200 && pipeLeft < 280) 
-        birdBottom < pipeBottom + 153 ||
-        && birdLeft === 220
+        pipeLeft > 200 && pipeLeft < 280 && birdLeft === 220 &&
+        birdBottom < pipeBottom + 152
         || birdBottom === 0) {
         // eslint-disable-next-line no-use-before-define
         gameOver()
