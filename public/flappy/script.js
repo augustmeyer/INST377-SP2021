@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let birdBottom = 100
   let gravity = 2
   let isGameOver = false
+  let gap = 440
         
   function startGame() {
     birdBottom -= gravity
@@ -28,22 +29,32 @@ document.addEventListener('DOMContentLoaded', () => {
     let randomHeight = Math.random() * 60
     let pipeBottom = randomHeight
     const pipe = document.createElement('div')
-    if (!isGameOver) pipe.classList.add('pipe')
+    const topPipe = document.createElement('div')
+    if (!isGameOver) {
+      pipe.classList.add('pipe')
+      topPipe.classList.add('topPipe')
+    }
     gameDisplay.appendChild(pipe)
+    gameDisplay.appendChild(topPipe)
     pipe.style.left = pipeLeft + 'px'
+    topPipe.style.left = pipeLeft + 'px'
     pipe.style.bottom = pipeBottom +'px'
+    topPipe.style.bottom = pipeBottom + gap + 'px'
 
     function movePipe() {
       pipeLeft -=2
       pipe.style.left = pipeLeft + 'px'
+      topPipe.style.left = pipeLeft + 'px'
 
       if (pipeLeft === -55) {
-        clearInterval()
+        // eslint-disable-next-line no-use-before-define
+        clearInterval(timerId)
         gameDisplay.removeChild(pipe)
+        gameDisplay.removeChild(topPipe)
       }
       if (
         pipeLeft > 200 && pipeLeft < 280 && birdLeft === 220 &&
-        birdBottom < pipeBottom + 151
+        (birdBottom < pipeBottom + 151 || birdBottom > pipeBottom + gap -200)
         || birdBottom === 0) {
         // eslint-disable-next-line no-use-before-define
         gameOver()
