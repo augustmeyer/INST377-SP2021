@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
       pipe.style.left = pipeLeft + 'px'
       topPipe.style.left = pipeLeft + 'px'
 
-      if (pipeLeft === -55) {
+      if (pipeLeft === -35) {
         // eslint-disable-next-line no-use-before-define
         clearInterval(timerId)
         gameDisplay.removeChild(pipe)
