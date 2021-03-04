@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(birdBottom)
   }
   document.addEventListener('click', jump)
-
+              
   function generatePipes() {
     let pipeLeft = 500
     let randomHeight = Math.random() * 60
